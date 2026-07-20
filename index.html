@@ -230,6 +230,91 @@
   .exp-meta{ font-family:var(--mono); font-size:12px; color:var(--coral); text-transform:uppercase; letter-spacing:0.04em; }
   .exp-desc{ color:var(--ink-soft); font-size:15px; margin-top:12px; max-width:640px; }
 
+  /* ---------- METRICS STRIP ---------- */
+  .metrics{
+    background:var(--ink);
+    padding:0;
+  }
+  .metrics-grid{
+    display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  @media (max-width:700px){ .metrics-grid{grid-template-columns:repeat(2,1fr);} }
+  .metric{
+    padding:36px 20px;
+    text-align:center;
+    border-right:1px solid rgba(251,250,247,0.14);
+  }
+  .metric:last-child{ border-right:none; }
+  @media (max-width:700px){ .metric:nth-child(2n){ border-right:none; } .metric{ border-bottom:1px solid rgba(251,250,247,0.14); } }
+  .metric .num{
+    font-family:var(--serif); font-weight:500; color:var(--paper);
+    font-size:clamp(28px,4vw,40px); line-height:1;
+  }
+  .metric .num .coral-num{ color:var(--coral); }
+  .metric .lbl{
+    font-family:var(--mono); font-size:11.5px; color:#B9B6C4;
+    text-transform:uppercase; letter-spacing:0.05em; margin-top:10px;
+  }
+  .metrics-note{
+    text-align:center; font-family:var(--mono); font-size:10.5px;
+    color:#8A879A; letter-spacing:0.06em; text-transform:uppercase;
+    padding:14px 0; border-top:1px solid rgba(251,250,247,0.1);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .proj-cols{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+  }
+  @media (max-width:700px){ .proj-cols{grid-template-columns:1fr;} }
+  .proj-block h3{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--coral); margin:0 0 16px;
+  }
+  .proj-list{ list-style:none; margin:0; padding:0; }
+  .proj-list li{
+    font-family:var(--sans); font-size:15px; padding:12px 0;
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .proj-list li:first-child{ padding-top:0; }
+  .proj-list li::before{ content:"↳"; color:var(--coral); font-size:13px; }
+
+  /* ---------- EXPERIENCE DETAIL ---------- */
+  .exp-areas{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;
+  }
+  .exp-areas span{
+    font-family:var(--mono); font-size:11.5px;
+    background:var(--paper); border:1px solid var(--line);
+    padding:5px 10px; color:var(--ink-soft);
+  }
+  .achieve-list{
+    list-style:none; margin:20px 0 0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr; gap:10px 24px;
+  }
+  @media (max-width:600px){ .achieve-list{grid-template-columns:1fr;} }
+  .achieve-list li{
+    font-size:14.5px; color:var(--ink-soft); padding-left:18px; position:relative;
+  }
+  .achieve-list li::before{
+    content:"✓"; position:absolute; left:0; color:var(--coral); font-family:var(--mono); font-size:12px;
+  }
+
+  /* ---------- TOOLS ---------- */
+  .tools-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  @media (max-width:600px){ .tools-grid{grid-template-columns:repeat(2,1fr);} }
+  .tool-item{
+    background:var(--paper); padding:18px 20px;
+    font-family:var(--mono); font-size:13px;
+  }
+  .tool-item .tool-cat{
+    display:block; font-size:10.5px; color:var(--coral);
+    text-transform:uppercase; letter-spacing:0.05em; margin-bottom:5px;
+  }
+
   /* ---------- SKILLS ---------- */
   .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
   .tag{
@@ -270,7 +355,8 @@
     <a href="#top" class="nav-mark">PALAK<span>·</span>MAHI</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#do">What I Do</a></li>
+      <li><a href="#do">Focus Areas</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -284,7 +370,7 @@
       <p class="eyebrow">Digital Marketing Executive</p>
       <h1 class="name">Palak Mahi</h1>
       <p class="role-line">Blending <span class="hl">creativity</span> with analytics.</p>
-      <p class="lede">Results-driven digital marketer with 9 months of hands-on experience building brand visibility, driving audience engagement, and executing data-informed marketing strategies — currently at WASP3D.</p>
+      <p class="lede">Results-driven digital marketer building brand visibility, driving audience engagement, and executing data-informed marketing strategies — currently at WASP3D, where my role has grown across SEO, Product Marketing, Content Strategy, YouTube, CRM, and Analytics.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="mailto:mahipalak211@gmail.com">Get in touch</a>
         <a class="btn btn-line" href="#experience">See my work</a>
@@ -297,6 +383,28 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="metrics">
+  <div class="wrap metrics-grid">
+    <div class="metric">
+      <div class="num">250<span class="coral-num">+</span></div>
+      <div class="lbl">YouTube Videos Managed</div>
+    </div>
+    <div class="metric">
+      <div class="num">180<span class="coral-num">K+</span></div>
+      <div class="lbl">Organic YouTube Views</div>
+    </div>
+    <div class="metric">
+      <div class="num">3<span class="coral-num">,000+</span></div>
+      <div class="lbl">Organic Leads Generated</div>
+    </div>
+    <div class="metric">
+      <div class="num">800<span class="coral-num">+</span></div>
+      <div class="lbl">Keywords Researched</div>
+    </div>
+  </div>
+  <div class="metrics-note">Cumulative results · WASP3D, June 2025 – Present</div>
 </div>
 
 <section id="about">
@@ -330,12 +438,30 @@
       <h2 class="sec-title">What I Do</h2>
     </div>
     <div class="cap-grid reveal">
-      <div class="cap-item"><div class="cap-title">Content Strategy</div>Develop content strategies grounded in target audience insights.</div>
-      <div class="cap-item"><div class="cap-title">Social Media</div>Manage and grow social presence with consistent engagement.</div>
-      <div class="cap-item"><div class="cap-title">LinkedIn Content</div>Write and schedule LinkedIn posts that strengthen brand authority.</div>
-      <div class="cap-item"><div class="cap-title">Email Marketing</div>Plan and execute campaigns aligned to brand positioning.</div>
-      <div class="cap-item"><div class="cap-title">Campaign Coordination</div>Work with design and internal teams to bring campaigns to life.</div>
-      <div class="cap-item"><div class="cap-title">Performance Tracking</div>Monitor metrics and optimize content based on results.</div>
+      <div class="cap-item"><div class="cap-title">SEO</div>Keyword research, on-page optimization, and landing page strategy to improve organic visibility.</div>
+      <div class="cap-item"><div class="cap-title">Product Marketing</div>Positioning, messaging, and value propositions across multiple product lines.</div>
+      <div class="cap-item"><div class="cap-title">YouTube Marketing</div>Content planning, scripting, SEO, and publishing across 250+ videos.</div>
+      <div class="cap-item"><div class="cap-title">Content Marketing</div>Blogs, website copy, landing pages, and social captions across channels.</div>
+      <div class="cap-item"><div class="cap-title">Email Marketing & CRM</div>Campaign creation, segmentation, and lead nurturing via Zoho.</div>
+      <div class="cap-item"><div class="cap-title">Social Media Marketing</div>Content calendars and campaign execution across LinkedIn, Instagram, Facebook, YouTube.</div>
+      <div class="cap-item"><div class="cap-title">Community Marketing</div>OBS Forum engagement and organic awareness initiatives.</div>
+      <div class="cap-item"><div class="cap-title">Analytics & Reporting</div>Google Analytics, YouTube Analytics, and monthly performance reporting.</div>
+      <div class="cap-item"><div class="cap-title">Creative Strategy</div>Campaign ideation, video concepts, and creative direction.</div>
+      <div class="cap-item"><div class="cap-title">Website Management</div>Content updates, SEO improvements, and navigation optimization.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Key Projects</h2>
+    </div>
+    <div class="cap-grid reveal" style="grid-template-columns:repeat(3,1fr);">
+      <div class="cap-item"><div class="cap-title">Landing Pages</div>Planned and built SEO-focused product landing pages — from keyword strategy to conversion-focused copy and layout.</div>
+      <div class="cap-item"><div class="cap-title">Market Research</div>Conducted competitor benchmarking, keyword-gap analysis, and search-trend research to guide content and product positioning.</div>
+      <div class="cap-item"><div class="cap-title">Video & Creative Content</div>Planned, scripted, and produced YouTube video content — tutorials, product demos, and feature walkthroughs.</div>
     </div>
   </div>
 </section>
@@ -343,15 +469,52 @@
 <section id="experience">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-num">03</span>
+      <span class="sec-num">04</span>
       <h2 class="sec-title">Experience</h2>
     </div>
     <div class="exp-card reveal">
       <div class="exp-top">
         <div class="exp-role">Digital Marketing Executive</div>
-        <div class="exp-meta">WASP3D · Current</div>
+        <div class="exp-meta">WASP3D · June 2025 – Present</div>
       </div>
-      <div class="exp-desc">Manage end-to-end digital communication — from content ideation to execution. Create audience-focused content, handle social media platforms, write and schedule LinkedIn posts, and execute email marketing campaigns that align with brand positioning and business objectives.</div>
+      <div class="exp-desc">Took ownership of digital marketing beyond the initial job description — growing into SEO, Product Marketing, Content Strategy, Website Optimization, YouTube Marketing, CRM, Community Marketing, and Analytics. Focused on improving organic visibility, generating leads, and creating marketing assets that support business growth.</div>
+      <div class="exp-areas">
+        <span>SEO</span><span>Product Marketing</span><span>YouTube Marketing</span>
+        <span>Content Marketing</span><span>Email Marketing & CRM</span>
+        <span>Community Marketing</span><span>Social Media</span>
+        <span>Analytics & Reporting</span><span>Creative Strategy</span>
+        <span>Website Management</span><span>Marketing Research</span>
+      </div>
+      <ul class="achieve-list">
+        <li>Managed 250+ YouTube videos across tutorials, product demos, and feature walkthroughs</li>
+        <li>Contributed to ~180K organic YouTube views</li>
+        <li>Generated around 3,000 organic leads</li>
+        <li>Filtered 800+ keywords into targeted SEO opportunities using SEMrush</li>
+        <li>Planned and executed SEO-focused landing pages for multiple products</li>
+        <li>Ran email campaigns and CRM management through Zoho</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Tools & Platforms</h2>
+    </div>
+    <div class="tools-grid reveal">
+      <div class="tool-item"><span class="tool-cat">SEO & Analytics</span>SEMrush</div>
+      <div class="tool-item"><span class="tool-cat">SEO & Analytics</span>Google Analytics</div>
+      <div class="tool-item"><span class="tool-cat">SEO & Analytics</span>Google Search Console</div>
+      <div class="tool-item"><span class="tool-cat">Paid Marketing</span>Google Ads</div>
+      <div class="tool-item"><span class="tool-cat">CRM & Marketing</span>Zoho CRM</div>
+      <div class="tool-item"><span class="tool-cat">CRM & Marketing</span>Zoho Campaigns</div>
+      <div class="tool-item"><span class="tool-cat">CMS & Website</span>WordPress</div>
+      <div class="tool-item"><span class="tool-cat">Content & Design</span>Canva</div>
+      <div class="tool-item"><span class="tool-cat">Content & Design</span>ChatGPT</div>
+      <div class="tool-item"><span class="tool-cat">Content & Design</span>Claude</div>
+      <div class="tool-item"><span class="tool-cat">Research</span>Google Trends</div>
     </div>
   </div>
 </section>
@@ -359,18 +522,23 @@
 <section id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-num">04</span>
+      <span class="sec-num">06</span>
       <h2 class="sec-title">Skills</h2>
     </div>
     <div class="tag-row reveal">
+      <span class="tag">SEO</span>
+      <span class="tag">Product Marketing</span>
+      <span class="tag">YouTube Marketing</span>
       <span class="tag">Content Strategy</span>
       <span class="tag">Social Media Management</span>
-      <span class="tag">LinkedIn Content</span>
-      <span class="tag">Email Marketing</span>
-      <span class="tag">Brand Communication</span>
+      <span class="tag">Email Marketing & CRM</span>
+      <span class="tag">Community Marketing</span>
+      <span class="tag">Analytics & Reporting</span>
+      <span class="tag">Creative Strategy</span>
+      <span class="tag">Website Management</span>
+      <span class="tag">Marketing Research</span>
       <span class="tag">Performance Marketing</span>
-      <span class="tag">Marketing Analytics</span>
-      <span class="tag">Campaign Execution</span>
+      <span class="tag">Google Ads</span>
     </div>
   </div>
 </section>
